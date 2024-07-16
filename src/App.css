@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+
+#root {
+  max-width: 95%;
+  margin: 0 auto;
+  padding: 0rem;
+  text-align: center;
+}
+
+html {
+ font-size:9px;
+ background-image: url(assets/SuperBroLottoBannerNoLogo2.jpg);
+ background-size: cover;
+ background-repeat: no-repeat;
+ background-position: center;
+ background-color: rgb(0, 0, 0);
+ background-attachment: fixed;
+ height: 100%;
+}
+
+body {
+  height: 100%;
+}
+
+@media (min-width: 375px) {
+  html {
+    font-size:10px;
+    }
+}
+
+@media (min-width: 800px) {
+  html {
+    font-size:14px;
+    }
+}
+
+@media (min-width: 1000px) {
+  #root {
+    max-width: 85%;
+  }
+}
+
+.bangers-regular {
+  font-family: "Bangers", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}

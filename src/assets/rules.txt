@@ -1,0 +1,41 @@
+### Rounds and Tickets
+
+- The lottery is organized in rounds. Each rounds least 7 days.
+
+- For each round, tickets can be bought in **$BRO**. The ticket has a fixed price in **$BRO**.
+
+- If tickets are bought using another currency, value is immediately swapped to **$BRO**.
+
+- Tickets are only valid for a single round.
+
+- Each user or account can buy as many tickets as he wants.
+
+- Ticket purchase price allocation:
+  - *90%* for the Main Pool (specific to a given round).
+  - *10%* for the Jackpot pool.
+
+### Prizes
+
+- 2 hours after the end of each round, 3 tickets are drawn.
+  1. **1st** ticket wins *50%* of the Main Pool.
+  2. **2nd** wins *25%* of the Main Pool.
+  3. **3rd** wins *15%* Of the Main Pool.
+
+
+### Fees
+
+- **Administrative Fees**: *5%* of the Main Pool is used for administrative and development fees.
+
+- **Community fees**: 5% is transferred to the $BRO Community account.
+
+### Jackpot
+
+- The user must choose for each ticket a Lucky (Star) Number between 0 and 9.
+
+- At the end of a round, a Jackpot Number is drawn:
+  - If the number is equal to the Lucky Number of the winning ticket (1st prize): The User wins *80%* of the Jacpkot Pool, on top of the usual 1st prize.
+  - If not, *100%* of the Jackpot pool is relocated to the next round.
+
+- No fees.
+
+- The Jackpot is initialized from the Community (Donation) account.

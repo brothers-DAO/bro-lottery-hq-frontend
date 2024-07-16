@@ -1,0 +1,36 @@
+### Entropy / Seed Generation
+The Draw Seed is defined as:
+
+Seed = Intrinsic Seed ⊕ Extrinsic Seed
+
+Intrinsic Seed is:
+`Blake2( *TXIDn* || Blake2( *TXIDn-1* || ( Blake2 (*TXIDn-2* || ........*TXID_init*))))`
+
+Where *TXIDn* is the TXid of the transaction where the Ticket n was bought.
+
+Extrinsic Seed is:
+The SHA256 hash of the **FIRST** Bitcoin block that meets the following conditions:
+  - Block height >= Target Height
+  - Block Timestamp >= Target Timestamp
+  - Confirmed by at least another block.
+
+where:
+   - Target Height = BTC Height at start-date + 1008 (number of blocks expected for 7 days)
+   - Target Timestamp = end-date + 2 hours
+
+### Draw
+The Smart contract draws 16 potential winning tickets:
+
+`1st = Blake2(Seed ⊕ 1) modulo N`
+
+`2nd = Blake2(Seed ⊕ 2) modulo N`
+
+...
+
+`16st = Blake2(Seed ⊕ 16) modulo N`
+
+(N being the total number of tickets)
+
+After removing duplicates, the 3 first tickets are designed as the 1st, 2nd and 3rd prize. This method prevents a single ticket for winning several prizes.
+
+`Star Number = Blake2(Seed ⊕ 888) modulo 10`
