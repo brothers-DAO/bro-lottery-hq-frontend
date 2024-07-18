@@ -24,9 +24,9 @@
 
 ### Fees
 
-- **Administrative Fees**: *5%* of the Main Pool is used for administrative and development fees.
+- **Administrative Fee**: *5%* of the Main Pool is used for administrative and development fees.
 
-- **Community fees**: 5% is transferred to the $BRO Community account.
+- **Community Fee**: 5% is transferred to the $BRO Community account.
 
 ### Jackpot
 
@@ -39,3 +39,11 @@
 - No fees.
 
 - The Jackpot is initialized from the Community (Donation) account.
+
+### Note about community funds
+
+- The Jackpot has initially been funded from the Brothers Community Fund with 0.3 $BRO
+
+- As a compensation, the Commnunity Fund receives the 5% *Community Fee* from tickets Sales.
+
+- In case we decide to stop the lotto (extraordinary event or circumstance beyond the control of the parties), the funds left in the Jackpot pool will be refunded back to the Community Fund.
