@@ -64,7 +64,7 @@ function BuyButton()
   return  <>
             <Button size="large" text raised  severity="danger" className="mb-3 text-2xl font-semibold shadow-5 flipleft animation-duration-1000" onClick={() =>  window.open('https://play-lotto.bro.pink', '_blank')} > Buy a ticket (Play Lotto Dapp) </Button>
             <div className="mb-2 font-italic text-xl" >
-              If you are a <a href="https://www.linxwallet.xyz/" target="_blank">Linx Wallet</a> user, you can buy a ticket directly in your Wallet
+              If you are a <a href="https://www.linxwallet.xyz/" target="_blank">Linx Wallet</a> user, you can buy a ticket directly in your Wallet. <span className="text-lg"> (small wallet's fee may apply) </span>
             </div>
           </>
 }
