@@ -153,7 +153,7 @@ function MainBar()
 function BottomBar()
 {
   return <Toolbar className="border-noround p-1 w-screen fixed bottom-0 left-0 text-400 text"
-                  start={<> <a className="mr-3 p-0 pi pi-github" href="https://github.com/brothers-DAO" target="_blank" />  <a className="mr-3 p-0 pi pi-twitter" href="https://x.com/thebrothersdao" target="_blank"/> Brtohers DAO Lottery v{version} </>}
+                  start={<> <a className="mr-3 p-0 pi pi-github" href="https://github.com/brothers-DAO" target="_blank" />  <a className="mr-3 p-0 pi pi-twitter" href="https://x.com/thebrothersdao" target="_blank"/> Brothers DAO Lottery v{version} </>}
                   end={`${NETWORK} / ${CHAIN} / ${NS}`} />
 
 }
