@@ -150,7 +150,8 @@ function PubliShEntropy ({gas_payer})
               Up to 8 blocks can be reported in a single transaction. (one per line)
             </p>
             <InputTextarea className="w-full mb-2" placeholder="Hex header (80 bytes)" value={value} onChange={(e) => setValue(e.target.value)} />
-            {!valid && <Message severity="error" text="Number of reported blocks invalid" /> }
+            {headers.length == 0 && <Message severity="info" text="Please report at least one block" /> }
+            {headers.length > 8 && <Message severity="error" text="Number of reported blocks invalid" /> }
             <SignAndSubmit trx={trx} />
           </>
 }
