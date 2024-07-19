@@ -1,7 +1,7 @@
 {
   "name": "BRO_Lottery",
   "private": false,
-  "version": "1.0.1",
+  "version": "1.0.2",
   "license": "BSD-3-Clause",
   "type": "module",
   "scripts": {
