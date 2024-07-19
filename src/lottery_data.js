@@ -13,7 +13,7 @@ const LOTTERY = import.meta.env.VITE_LOTTERY_NS + ".bro-lottery"
 /* Generic types Adapters */
 export const to_big_int = x=>BigInt(x.int)
 export const to_int = x=>Number(x.int)
-export const to_decimal = v => v?(v.dec?Decimal(v.dec):Decimal(v)):Decimal(0)
+export const to_decimal = v => v?(v.decimal?Decimal(v.decimal):Decimal(v)):Decimal(0)
 const to_date = x=> x.time?new Date(x.time):new Date(x.timep)
 
 /* Convert "-" in field names to "_" */
