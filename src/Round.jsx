@@ -8,9 +8,14 @@ import { Panel } from 'primereact/panel';
 import { Card } from 'primereact/card';
 import { Steps } from 'primereact/steps';
 
-import {usePoolsBalances, useTickets, useAllTickets, useResult} from './lottery_data';
+import {usePoolsBalances, useTickets, useAllTickets, useResult, useRoundAccounts} from './lottery_data';
 
-const ExplorerLink = ({trx}) => <a target="_blank" href={import.meta.env.VITE_EXPLORER + "/txdetail/" + trx}> {trx} </a>
+const EXPLORER = import.meta.env.VITE_EXPLORER;
+const BRO = import.meta.env.VITE_BRO_NS + ".bro";
+
+const ExplorerLink = ({trx}) => <a target="_blank" href={EXPLORER + "/txdetail/" + trx}> {trx} </a>
+
+const ExplorerAccountLink = ({acct}) => <a target="_blank" className="mx-1 pi pi-external-link" href={`${EXPLORER}/account/${acct}?token=${BRO}`} />
 
 function StateDisplay({state, start_time, end_time})
 {
@@ -31,9 +36,9 @@ const show_price = x => (x?x.toFixed(4):"/") + String.fromCharCode(160) + "$BRO"
 const show_int = x => x!=null?x.toString():"."
 
 
-const DisplayItem = ({title, value}) => <Card className="flex-1 shadow-4">
+const DisplayItem = ({title, value, account}) => <Card className="flex-1 shadow-4">
                                           <div className="flex flex-column gap-1">
-                                            <span className="text-secondary text-l text-orange-600">{title}</span>
+                                            <span className="text-secondary text-l text-orange-600">{title} {account && <ExplorerAccountLink acct={account} />}</span>
                                             <span className="font-bold text-lg">{value}</span>
                                           </div>
                                         </Card>
@@ -99,6 +104,7 @@ function TicketTable({round_id})
 export function RoundDisplay({round, state, hasTitle})
 {
   const [main_bal, jackpot_bal] = usePoolsBalances(round?.id)
+  const [main_acct, jackpot_acct] = useRoundAccounts(round?.id)
   const result = useResult((state=="SETTLED" && round?.tickets_limit)?round?.id:null)
 
   const ListItem = ({title,value}) => <li> <span className="font-bold"> {title} : </span> <span style={{fontFamily:"monospace"}} > {value} </span> </li>
@@ -112,8 +118,8 @@ export function RoundDisplay({round, state, hasTitle})
             <div className="flex flex-row flex-wrap gap-4 mt-5 ">
               <DisplayItem title="Ticket price" value={show_price(round?.ticket_price)} />
               <DisplayItem title="Tickets sold" value={show_int(round?.tickets_count) + " / " + show_int(round?.tickets_limit)} />
-              <DisplayItem title="Main Pool" value={show_price(_main_bal)} />
-              <DisplayItem title="Jackpot Pool" value={show_price(_jackpot_bal)} />
+              <DisplayItem title="Main Pool" account={main_acct} value={show_price(_main_bal)} />
+              <DisplayItem title="Jackpot Pool" account={jackpot_acct} value={show_price(_jackpot_bal)} />
             </div>
 
             <div className="flex mt-5 mb-5 justify-content-center">

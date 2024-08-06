@@ -69,6 +69,12 @@ export function useOpKeyset()
     return data?.keys;
 }
 
+export function useRoundAccounts(round_id)
+{
+  const {data} = useLocalPact(round_id?`[(${LOTTERY}.round-account "${round_id}"), ${LOTTERY}.JACKPOT-ACCOUNT]`:null, NETWORK, CHAIN);
+  return data?data:[null,null];
+}
+
 export function usePoolsBalances(round_id)
 {
   const {data} = useLocalPact(round_id?`[(${LOTTERY}.round-balance "${round_id}"), (${LOTTERY}.jackpot-balance)]`:null, NETWORK, CHAIN);
