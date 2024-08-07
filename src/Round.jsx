@@ -91,10 +91,7 @@ function TicketTable({round_id})
   const tickets = useAllTickets(round_id);
   const isLargeScreen= useMediaQuery({ minWidth: 800 })
 
-  console.log("-------------------------------")
-  console.log(isLargeScreen)
-
-  return  <DataTable value={tickets} showGridlines className="max-w-max" paginator rows={16}>
+  return  <DataTable emptyMessage="No tickets" value={tickets} showGridlines className="max-w-max" paginator rows={16}>
             <Column sortable field="rank" header="#" style={{ width: '25%', fontFamily:"monospace" }}></Column>
             <Column header="Account" field="account" body={({account}) => isLargeScreen?account:shortened_account(account)} filter sortable sortFunction={onSortAccount} style={{fontFamily:"monospace" }}></Column>
             <Column field="star_number" header="Lucky Star Number" style={{fontFamily:"monospace" }}></Column>
